@@ -10,7 +10,7 @@ $video_prefix   = 'egns_video';
 ------------------------------------*/
 CSF::createMetabox( $video_prefix,
 	array(
-		'title'           => esc_html__( 'Post Settings', 'corelaw' ),
+		'title'           => esc_html__( 'Post Settings', 'xoon' ),
 		'post_type'       => 'post',
 		'data_type'       => 'unserialize',
 		'context'         => 'normal',
@@ -27,13 +27,13 @@ CSF::createMetabox( $video_prefix,
 ------------------------------------*/
 CSF::createSection( $video_prefix,
 	array(
-		'title'  => esc_html__( 'Video Post Setting', 'corelaw' ),
+		'title'  => esc_html__( 'Video Post Setting', 'xoon' ),
 		'fields' => array(
 		    array(
 				'id'          => 'egns_video_url',
 				'type'        => 'text',
-				'title'       => esc_html__( 'Video Url', 'corelaw' ),
-				'subtitle'    => esc_html__( 'Paste here a valid video url which is support auto embed with WordPress for post audio player preview.', 'corelaw' ),
+				'title'       => esc_html__( 'Video Url', 'xoon' ),
+				'subtitle'    => esc_html__( 'Paste here a valid video url which is support auto embed with WordPress for post audio player preview.', 'xoon' ),
 				'placeholder' => 'https://www.youtube.com/watch?v=Hlp-CVoCj0s',
 				'default'     => 'https://www.youtube.com/watch?v=Hlp-CVoCj0s',
 				'validate'    => 'csf_validate_url',

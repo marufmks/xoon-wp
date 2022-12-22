@@ -61,9 +61,9 @@ function egns_register_required_plugins() {
 	$plugins = array(
 
 		array(
-			'name'               => esc_html('Egens Core'),
-			'slug'               => 'egens-core',
-			'source'             => esc_url('https://demo.egenslab.com/wp/plugins/corelaw-files/egens-core.zip'),
+			'name'               => esc_html('Xoon Core'),
+			'slug'               => 'egens-core-for-xoon',
+			'source'             => esc_url('https://demo.egenslab.com/wp/plugins/xoon-files/egens-core-for-xoon.zip'),
 			'required'           => true,
 			'version'            => '',
 			'force_activation'   => false,
@@ -125,7 +125,7 @@ function egns_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'corelaw',
+		'id'           => 'xoon',
 		'default_path' => '',
 		'menu'         => 'tgmpa-install-plugins',
 		'has_notices'  => true,

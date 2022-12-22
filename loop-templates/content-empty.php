@@ -2,7 +2,7 @@
 /**
  * Empty content partial template.
  *
- * @package astrip
+ * @package xoon
  */
 
 the_content();

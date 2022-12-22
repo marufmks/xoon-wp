@@ -1,7 +1,7 @@
 <?php
 /**
  * Theme Options
- * @Packange Corelaw
+ * @Packange xoon
  * @since 1.0.0
  */
 // exit if access directly
@@ -16,8 +16,9 @@ if ( class_exists( 'CSF' ) ) {
 	$allowed_html = '';
 	// Create options
 	CSF::createOptions( $prefix . '_theme_options', array(
-		'menu_title'         => esc_html__( 'Theme Options', 'corelaw' ),
+		'menu_title'         => esc_html__( 'Xoon Options', 'xoon' ),
 		'menu_slug'  		 => 'egns-theme-option',
+		'menu_position'		 => 60,
 		'footer_credit'      => '',
 		'menu_icon'          => 'dashicons-image-filter',
 		'show_footer'        => false,
@@ -27,7 +28,7 @@ if ( class_exists( 'CSF' ) ) {
 		'show_reset_section' => true,
 		'show_all_options'   => true,
 		'theme'              => 'dark',
-		'framework_title'    => sprintf( ('Corelaw <small> - Version 1.0.0 BY </small><small><a  href="https://themeforest.net/user/egenslab" target="_blank">Egenslab</a></small>' )),
+		'framework_title'    => sprintf( ('Xoon <small> - Version 1.0.0 BY </small><small><a  href="https://themeforest.net/user/egenslab" target="_blank">Egenslab</a></small>' )),
 	) );
 
 

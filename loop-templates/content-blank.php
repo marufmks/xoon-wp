@@ -2,7 +2,7 @@
 /**
  * Blank content partial template.
  *
- * @package corelaw
+ * @package xoon
  */
 
 the_content();

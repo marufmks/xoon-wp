@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all pages
  *
@@ -14,20 +15,21 @@
 
 get_header();
 
-if( ! is_front_page() ) :
-	get_template_part( 'template-parts/breadcrumbs/breadcrumb-page' );
-endif;
+if (!is_front_page()) :
+    get_template_part('template-parts/breadcrumbs/breadcrumb-page');
+endif; 
+
 ?>
+
 <div class="page-wrapper sec-mar">
     <?php
-        do_action( 'egns_page_before' );
-            while ( have_posts() ) :
-                the_post();
-                get_template_part( 'loop-templates/content', 'page' );
-            endwhile;
-        do_action( 'egns_page_after' );
+        do_action('egns_page_before');
+        while (have_posts()) :
+            the_post();
+            get_template_part('loop-templates/content', 'page');
+        endwhile;
+        do_action('egns_page_after');
     ?>
 </div>
-<?php
-get_footer();
-?>
+
+<?php get_footer(); ?>

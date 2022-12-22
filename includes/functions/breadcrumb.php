@@ -111,12 +111,12 @@
 
             // Search
             if ( is_search() ) {
-                $breadcrumb .= '<li class="' . $active_class . '">' . esc_html__( 'Search', 'corelaw' ) . '</li>';
+                $breadcrumb .= '<li class="' . $active_class . '">' . esc_html__( 'Search', 'xoon' ) . '</li>';
             }
 
             // 404
             if ( is_404() ) {
-                $breadcrumb .= '<li class="' . $active_class . '">' . esc_html__( '404', 'corelaw' ) . '</li>';
+                $breadcrumb .= '<li class="' . $active_class . '">' . esc_html__( '404', 'xoon' ) . '</li>';
             }
 
             // Custom Post Type Archive
@@ -219,7 +219,7 @@
 
             // Ouput
             if ( $echo ) {
-                echo sprintf( esc_html__("%s", 'corelaw'), $breadcrumb ); ;
+                echo sprintf( esc_html__("%s", 'xoon'), $breadcrumb ); ;
             } else {
                 return $breadcrumb;
             }

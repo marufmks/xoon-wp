@@ -9,7 +9,7 @@ if( class_exists( 'CSF' ) ) {
    --------------------------------------------------------*/
    CSF::createSection( $prefix . '_theme_options', array(
         'id'    => 'header_options',
-        'title' => esc_html__( 'Header Options', 'corelaw' ),
+        'title' => esc_html__( 'Header Options', 'xoon' ),
         'icon'  => 'fa fa-rss'
     ) );
 	/*-----------------------------------

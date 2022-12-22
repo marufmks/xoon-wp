@@ -31,7 +31,9 @@ if (class_exists('CSF')) {
 
 	require_once EGNS_INC . '/theme-options/options/pages/page-header.php';
 	require_once EGNS_INC . '/theme-options/options/pages/page-breadcrumb.php';
-	// require_once EGNS_INC . '/theme-options/options/pages/page-footer.php';
-	// require_once EGNS_INC . '/theme-options/options/pages/page-css.php';
+	require_once EGNS_INC . '/theme-options/options/pages/page-footer.php';
+	require_once EGNS_INC . '/theme-options/options/pages/service-custom-fields.php';
+	require_once EGNS_INC . '/theme-options/options/pages/portfolio-custom-fields.php';
+
 
 }

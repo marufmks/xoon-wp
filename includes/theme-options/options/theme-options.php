@@ -1,7 +1,7 @@
 <?php
 /**
 * Theme Option Settings. This is the main file to manage options.
-* @package Corelaw
+* @package xoon
 * @since 1.0.0
 */
 
@@ -25,10 +25,10 @@ if ( ! current_user_can( 'manage_options' ) ) {
     $info       = wp_get_theme();
     $name       = $info->get( 'Name' );
     $version    = $info->get( 'Version' );
-    $version    = '<small>' . sprintf( __( '- Version %s', 'corelaw' ) . '</small>', $version );
+    $version    = '<small>' . sprintf( __( '- Version %s', 'xoon' ) . '</small>', $version );
     $author     = $info->get( 'Author' );
     $author_uri = $info->get( 'AuthorURI' );
-    $author_uri = '<small>' . esc_html__( 'BY', 'corelaw' ) . ' <a target="_blank" href="' . esc_url( $author_uri ) . '">' . esc_html( $author ) . '</a></small>';
+    $author_uri = '<small>' . esc_html__( 'BY', 'xoon' ) . ' <a target="_blank" href="' . esc_url( $author_uri ) . '">' . esc_html( $author ) . '</a></small>';
     $theme_uri  = $info->get( 'ThemeURI' );
 
     CSF::createOptions( EGNS_OPTION_ID, array(
@@ -36,13 +36,13 @@ if ( ! current_user_can( 'manage_options' ) ) {
         /*--------------------------
         FRAMEWORK TITLE
         ---------------------------*/
-        'framework_title'    => sprintf( __( '%1$s WordPress Theme %2$s %3$s', 'corelaw' ), $name, $version, $author_uri ),
-        'framework_class'    => 'corelaw',
+        'framework_title'    => sprintf( __( '%1$s WordPress Theme %2$s %3$s', 'xoon' ), $name, $version, $author_uri ),
+        'framework_class'    => 'xoon',
 
         /*--------------------------
         MENU SETTINGS
         ---------------------------*/
-        'menu_title'         => sprintf( __( '%s Options', 'corelaw' ), $name ),
+        'menu_title'         => sprintf( __( '%s Options', 'xoon' ), $name ),
         'menu_slug'          => 'egns_options',
         'menu_type'          => 'menu',
         'menu_capability'    => 'manage_options',
@@ -70,8 +70,8 @@ if ( ! current_user_can( 'manage_options' ) ) {
         /*--------------------------
         FOOTER
         ---------------------------*/
-        'footer_credit'      => sprintf( __( 'Credited by %s', 'corelaw' ), $author_uri ),
-        'footer_text'        => sprintf( __( 'Made with love by %s', 'corelaw' ), $author_uri ),
+        'footer_credit'      => sprintf( __( 'Credited by %s', 'xoon' ), $author_uri ),
+        'footer_text'        => sprintf( __( 'Made with love by %s', 'xoon' ), $author_uri ),
         'footer_after'       => '',
         'transient_time'     => 0,
 
@@ -104,9 +104,4 @@ require_once EGNS_INC . '/theme-options/options/post/post.php';
     THEME OPTION SETTINGS
 ---------------------------------*/
 require_once EGNS_THEME_SETTINGS . 'settings.php';
-
-/*-------------------------------
-   NFT Collection Options
----------------------------------*/
-require_once EGNS_THEME_OPTIONS . '/collection/collection-options.php';
 

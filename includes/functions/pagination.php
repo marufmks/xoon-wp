@@ -29,3 +29,4 @@ function pagination_mid_size( $size ) {
 }
 
 add_filter( "egns_pagination_mid_size", "pagination_mid_size" );
+

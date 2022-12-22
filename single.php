@@ -4,12 +4,12 @@ get_header();
 get_template_part('template-parts/breadcrumbs/breadcrumb-archive');
 ?>
 
-<div class="blog-standard-section pt-120 pb-120">
+<div class="inner-blog pt-120 pb-120">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 <?php echo !is_active_sidebar('blog_sidebar') ? 'offset-xl-2 offset-lg-2' : '' ?> or1">
-                <div class="blog-post-area">
-                    <?php
+        <div class="row g-lg-5 g-4 <?php echo !is_active_sidebar('blog_sidebar') ? 'justify-content-center' : '' ?>">
+            <div class="col-lg-8">
+                <div class="blog-details-area">
+                <?php
                         while ( have_posts() ) :
 
                             the_post();
@@ -24,22 +24,22 @@ get_template_part('template-parts/breadcrumbs/breadcrumb-archive');
                             if ( comments_open() || get_comments_number() ) : ?>
 
                             <?php 
-                                comments_template();
+                                comments_template('/comments.php');
                             endif;
                         ?>
                 </div>
             </div>
-            <?php 
-                if ( is_active_sidebar('blog_sidebar') ) { ?>
-                    <div class="col-lg-4 col-md-6 col-sm-10">
-                        <div class="blog-sidebar ps-lg-4">
-                            <?php 
-                                dynamic_sidebar( 'blog_sidebar' );
-                            ?> 
-                        </div>
+            <?php
+            if (is_active_sidebar('blog_sidebar')) { ?>
+                <div class="col-lg-4 col-md-8">
+                    <div class="widget-area">
+                        <?php
+                            dynamic_sidebar('blog_sidebar');
+                        ?>
                     </div>
-                <?php
-                }
+                </div>
+            <?php
+            }
             ?>
         </div>
     </div>

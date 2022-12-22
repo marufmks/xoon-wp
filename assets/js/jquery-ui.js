@@ -1,6 +1,6 @@
 /*! jQuery UI - v1.12.1 - 2016-09-14
 * http://jqueryui.com
-* Includes: widget.js, position.js, data.js, disable-selection.js, effect.js, effects/effect-blind.js, effects/effect-bounce.js, effects/effect-clip.js, effects/effect-drop.js, effects/effect-explode.js, effects/effect-fade.js, effects/effect-fold.js, effects/effect-highlight.js, effects/effect-puff.js, effects/effect-pulsate.js, effects/effect-scale.js, effects/effect-shake.js, effects/effect-size.js, effects/effect-slide.js, effects/effect-transfer.js, focusable.js, form-reset-mixin.js, jquery-1-7.js, keycode.js, labels.js, scroll-parent.js, tabbable.js, unique-id.js, widgets/accordion.js, widgets/autocomplete.js, widgets/button.js, widgets/checkboxradio.js, widgets/controlgroup.js, widgets/datepicker.js, widgets/dialog.js, widgets/draggable.js, widgets/droppable.js, widgets/menu.js, widgets/mouse.js, widgets/progressbar.js, widgets/resizable.js, widgets/selectable.js, widgets/selectmenu.js, widgets/slider.js, widgets/sortable.js, widgets/spinner.js, widgets/tabs.js, widgets/tooltip.js
+* Includes: widget.js, position.js, data.js, disable-selection.js, effect.js, effects/effect-blind.js, effects/effect-bounce.js, effects/effect-clip.js, effects/effect-drop.js, effects/effect-explode.js, effects/effect-fade.js, effects/effect-fold.js, effects/effect-highlight.js, effects/effect-puff.js, effects/effect-pulsate.js, effects/effect-scale.js, effects/effect-shake.js, effects/effect-size.js, effects/effect-slide.js, effects/effect-transfer.js, focusable.js, form-reset-mixin.js, jquery-1-7.js, keycode.js, labels.js, scroll-parent.js, tabbable.js, unique-id.js, widgets/accordion.js, widgets/autocomplete.js, widgets/button.js, widgets/checkboxradio.js, widgets/controlgroup.js, widgets/datepicker.js, widgets/dialog.js, widgets/draggable.js, widgets/droppable.js, widgets/menu.js, widgets/mouse.js, widgets/progressbar.js, widgets/resizable.js, widgets/selectable.js, widgets/selectmenu.js, widgets/slider.js, widgets/sortable.js, widgets/xoon.js, widgets/tabs.js, widgets/tooltip.js
 * Copyright jQuery Foundation and other contributors; Licensed MIT */
 
 (function( factory ) {
@@ -6272,7 +6272,7 @@ var widgetsControlgroup = $.widget( "ui.controlgroup", {
 			"controlgroupLabel": ".ui-controlgroup-label",
 			"checkboxradio": "input[type='checkbox'], input[type='radio']",
 			"selectmenu": "select",
-			"spinner": ".ui-spinner-input"
+			"xoon": ".ui-xoon-input"
 		}
 	},
 
@@ -6352,9 +6352,9 @@ var widgetsControlgroup = $.widget( "ui.controlgroup", {
 					// polluting the variable options which has a wider scope than a single widget.
 					var instanceOptions = $.widget.extend( {}, options );
 
-					// If the button is the child of a spinner ignore it
+					// If the button is the child of a xoon ignore it
 					// TODO: Find a more generic solution
-					if ( widget === "button" && element.parent( ".ui-spinner" ).length ) {
+					if ( widget === "button" && element.parent( ".ui-xoon" ).length ) {
 						return;
 					}
 
@@ -6415,11 +6415,11 @@ var widgetsControlgroup = $.widget( "ui.controlgroup", {
 		return result;
 	},
 
-	_spinnerOptions: function( position ) {
-		var options = this._buildSimpleOptions( position, "ui-spinner" );
+	_xoonOptions: function( position ) {
+		var options = this._buildSimpleOptions( position, "ui-xoon" );
 
-		options.classes[ "ui-spinner-up" ] = "";
-		options.classes[ "ui-spinner-down" ] = "";
+		options.classes[ "ui-xoon-up" ] = "";
+		options.classes[ "ui-xoon-down" ] = "";
 
 		return options;
 	},
@@ -16735,7 +16735,7 @@ var widgetsSortable = $.widget( "ui.sortable", $.ui.mouse, {
 
 
 /*!
- * jQuery UI Spinner 1.12.1
+ * jQuery UI xoon 1.12.1
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
@@ -16743,18 +16743,18 @@ var widgetsSortable = $.widget( "ui.sortable", $.ui.mouse, {
  * http://jquery.org/license
  */
 
-//>>label: Spinner
+//>>label: xoon
 //>>group: Widgets
 //>>description: Displays buttons to easily input numbers via the keyboard or mouse.
-//>>docs: http://api.jqueryui.com/spinner/
-//>>demos: http://jqueryui.com/spinner/
+//>>docs: http://api.jqueryui.com/xoon/
+//>>demos: http://jqueryui.com/xoon/
 //>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/spinner.css
+//>>css.structure: ../../themes/base/xoon.css
 //>>css.theme: ../../themes/base/theme.css
 
 
 
-function spinnerModifer( fn ) {
+function xoonModifer( fn ) {
 	return function() {
 		var previous = this.element.val();
 		fn.apply( this, arguments );
@@ -16765,15 +16765,15 @@ function spinnerModifer( fn ) {
 	};
 }
 
-$.widget( "ui.spinner", {
+$.widget( "ui.xoon", {
 	version: "1.12.1",
 	defaultElement: "<input>",
 	widgetEventPrefix: "spin",
 	options: {
 		classes: {
-			"ui-spinner": "ui-corner-all",
-			"ui-spinner-down": "ui-corner-br",
-			"ui-spinner-up": "ui-corner-tr"
+			"ui-xoon": "ui-corner-all",
+			"ui-xoon-down": "ui-corner-br",
+			"ui-xoon-up": "ui-corner-tr"
 		},
 		culture: null,
 		icons: {
@@ -16875,11 +16875,11 @@ $.widget( "ui.spinner", {
 			}, 100 );
 			event.preventDefault();
 		},
-		"mousedown .ui-spinner-button": function( event ) {
+		"mousedown .ui-xoon-button": function( event ) {
 			var previous;
 
 			// We never want the buttons to have focus; whenever the user is
-			// interacting with the spinner, the focus should be on the input.
+			// interacting with the xoon, the focus should be on the input.
 			// If the input is focused then this.previous is properly set from
 			// when the input first received focus. If the input is not focused
 			// then we need to set this.previous based on the value before spinning.
@@ -16919,10 +16919,10 @@ $.widget( "ui.spinner", {
 			}
 
 			this._repeat( null, $( event.currentTarget )
-				.hasClass( "ui-spinner-up" ) ? 1 : -1, event );
+				.hasClass( "ui-xoon-up" ) ? 1 : -1, event );
 		},
-		"mouseup .ui-spinner-button": "_stop",
-		"mouseenter .ui-spinner-button": function( event ) {
+		"mouseup .ui-xoon-button": "_stop",
+		"mouseenter .ui-xoon-button": function( event ) {
 
 			// button will add ui-state-active if mouse was down while mouseleave and kept down
 			if ( !$( event.currentTarget ).hasClass( "ui-state-active" ) ) {
@@ -16933,18 +16933,18 @@ $.widget( "ui.spinner", {
 				return false;
 			}
 			this._repeat( null, $( event.currentTarget )
-				.hasClass( "ui-spinner-up" ) ? 1 : -1, event );
+				.hasClass( "ui-xoon-up" ) ? 1 : -1, event );
 		},
 
 		// TODO: do we really want to consider this a stop?
 		// shouldn't we just stop the repeater and wait until mouseup before
 		// we trigger the stop event?
-		"mouseleave .ui-spinner-button": "_stop"
+		"mouseleave .ui-xoon-button": "_stop"
 	},
 
 	// Support mobile enhanced option and make backcompat more sane
 	_enhance: function() {
-		this.uiSpinner = this.element
+		this.uixoon = this.element
 			.attr( "autocomplete", "off" )
 			.wrap( "<span>" )
 			.parent()
@@ -16958,13 +16958,13 @@ $.widget( "ui.spinner", {
 	_draw: function() {
 		this._enhance();
 
-		this._addClass( this.uiSpinner, "ui-spinner", "ui-widget ui-widget-content" );
-		this._addClass( "ui-spinner-input" );
+		this._addClass( this.uixoon, "ui-xoon", "ui-widget ui-widget-content" );
+		this._addClass( "ui-xoon-input" );
 
 		this.element.attr( "role", "spinbutton" );
 
 		// Button bindings
-		this.buttons = this.uiSpinner.children( "a" )
+		this.buttons = this.uixoon.children( "a" )
 			.attr( "tabIndex", -1 )
 			.attr( "aria-hidden", true )
 			.button( {
@@ -16976,8 +16976,8 @@ $.widget( "ui.spinner", {
 		// TODO: Right now button does not support classes this is already updated in button PR
 		this._removeClass( this.buttons, "ui-corner-all" );
 
-		this._addClass( this.buttons.first(), "ui-spinner-button ui-spinner-up" );
-		this._addClass( this.buttons.last(), "ui-spinner-button ui-spinner-down" );
+		this._addClass( this.buttons.first(), "ui-xoon-button ui-xoon-up" );
+		this._addClass( this.buttons.last(), "ui-xoon-button ui-xoon-down" );
 		this.buttons.first().button( {
 			"icon": this.options.icons.up,
 			"showLabel": false
@@ -16989,9 +16989,9 @@ $.widget( "ui.spinner", {
 
 		// IE 6 doesn't understand height: 50% for the buttons
 		// unless the wrapper has an explicit height
-		if ( this.buttons.height() > Math.ceil( this.uiSpinner.height() * 0.5 ) &&
-				this.uiSpinner.height() > 0 ) {
-			this.uiSpinner.height( this.uiSpinner.height() );
+		if ( this.buttons.height() > Math.ceil( this.uixoon.height() * 0.5 ) &&
+				this.uixoon.height() > 0 ) {
+			this.uixoon.height( this.uixoon.height() );
 		}
 	},
 
@@ -17152,12 +17152,12 @@ $.widget( "ui.spinner", {
 	_setOptionDisabled: function( value ) {
 		this._super( value );
 
-		this._toggleClass( this.uiSpinner, null, "ui-state-disabled", !!value );
+		this._toggleClass( this.uixoon, null, "ui-state-disabled", !!value );
 		this.element.prop( "disabled", !!value );
 		this.buttons.button( value ? "disable" : "enable" );
 	},
 
-	_setOptions: spinnerModifer( function( options ) {
+	_setOptions: xoonModifer( function( options ) {
 		this._super( options );
 	} ),
 
@@ -17221,10 +17221,10 @@ $.widget( "ui.spinner", {
 			.prop( "disabled", false )
 			.removeAttr( "autocomplete role aria-valuemin aria-valuemax aria-valuenow" );
 
-		this.uiSpinner.replaceWith( this.element );
+		this.uixoon.replaceWith( this.element );
 	},
 
-	stepUp: spinnerModifer( function( steps ) {
+	stepUp: xoonModifer( function( steps ) {
 		this._stepUp( steps );
 	} ),
 	_stepUp: function( steps ) {
@@ -17234,7 +17234,7 @@ $.widget( "ui.spinner", {
 		}
 	},
 
-	stepDown: spinnerModifer( function( steps ) {
+	stepDown: xoonModifer( function( steps ) {
 		this._stepDown( steps );
 	} ),
 	_stepDown: function( steps ) {
@@ -17244,11 +17244,11 @@ $.widget( "ui.spinner", {
 		}
 	},
 
-	pageUp: spinnerModifer( function( pages ) {
+	pageUp: xoonModifer( function( pages ) {
 		this._stepUp( ( pages || 1 ) * this.options.page );
 	} ),
 
-	pageDown: spinnerModifer( function( pages ) {
+	pageDown: xoonModifer( function( pages ) {
 		this._stepDown( ( pages || 1 ) * this.options.page );
 	} ),
 
@@ -17256,11 +17256,11 @@ $.widget( "ui.spinner", {
 		if ( !arguments.length ) {
 			return this._parse( this.element.val() );
 		}
-		spinnerModifer( this._value ).call( this, newVal );
+		xoonModifer( this._value ).call( this, newVal );
 	},
 
 	widget: function() {
-		return this.uiSpinner;
+		return this.uixoon;
 	}
 } );
 
@@ -17268,18 +17268,18 @@ $.widget( "ui.spinner", {
 // TODO: switch return back to widget declaration at top of file when this is removed
 if ( $.uiBackCompat !== false ) {
 
-	// Backcompat for spinner html extension points
-	$.widget( "ui.spinner", $.ui.spinner, {
+	// Backcompat for xoon html extension points
+	$.widget( "ui.xoon", $.ui.xoon, {
 		_enhance: function() {
-			this.uiSpinner = this.element
+			this.uixoon = this.element
 				.attr( "autocomplete", "off" )
-				.wrap( this._uiSpinnerHtml() )
+				.wrap( this._uixoonHtml() )
 				.parent()
 
 					// Add buttons
 					.append( this._buttonHtml() );
 		},
-		_uiSpinnerHtml: function() {
+		_uixoonHtml: function() {
 			return "<span>";
 		},
 
@@ -17289,7 +17289,7 @@ if ( $.uiBackCompat !== false ) {
 	} );
 }
 
-var widgetsSpinner = $.ui.spinner;
+var widgetsxoon = $.ui.xoon;
 
 
 /*!

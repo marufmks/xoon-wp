@@ -42,17 +42,10 @@ define('EGNS_ASSETS', EGNS_THEME_ROOT_URL . '/assets');
  */
 require EGNS_INC . '/functions/enqueue.php';
 
-
-/**
- * Theme option panel CSS.
- */
-
-
 /**
  * Theme setup and custom theme supports.
  */
 require EGNS_INC . '/functions/theme-setup.php';
-
 
 /**
  * Theme Breadcrumbs
@@ -64,30 +57,30 @@ require EGNS_INC . '/functions/breadcrumb.php';
  */
 require EGNS_INC . '/functions/widgets.php';
 
-
 /**
  * Comment Form
  */
 require EGNS_INC . '/functions/comment.php';
-
 
 /**
  * Excerpt.
  */
 require EGNS_INC . '/functions/excerpt.php';
 
-
 /**
  * Blog Pagination 
  */
 require EGNS_INC . '/functions/pagination.php';
 
+/**
+ * Modified Hooks 
+ */
+require EGNS_INC . '/functions/modified-hooks.php';
 
 /**
  * Theme Helper functions
  */
 require EGNS_INC . '/class-egns-helper.php';
-
 
 /**
  * Theme option panel Settings
@@ -103,6 +96,11 @@ require EGNS_INC . '/egns-template-tags.php';
  * TGM plugin activation.
  */
 require_once EGNS_INC . '/plugins/tgma/activation.php';
+
+/**
+ * Include load more feature
+ */
+require_once EGNS_INC . '/functions/load-more.php';
 
 /**
  * Include Custom Style

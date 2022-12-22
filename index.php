@@ -10,7 +10,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package corelaw
+ * @package xoon
  */
 get_header();
 

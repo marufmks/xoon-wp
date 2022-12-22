@@ -10,7 +10,7 @@ $gallery_prefix = 'egns_gallery';
 ------------------------------------*/
 CSF::createMetabox( $gallery_prefix,
 	array(
-		'title'           => esc_html__( 'Post Settings', 'corelaw' ),
+		'title'           => esc_html__( 'Post Settings', 'xoon' ),
 		'post_type'       => 'post',
 		'data_type'       => 'unserialize',
 		'context'         => 'normal',
@@ -27,16 +27,16 @@ CSF::createMetabox( $gallery_prefix,
 ------------------------------------*/
 CSF::createSection( $gallery_prefix,
 	array(
-		'title'  => esc_html__( 'Gallery Post Setting', 'corelaw' ),
+		'title'  => esc_html__( 'Gallery Post Setting', 'xoon' ),
 		'fields' => array(
 			array(
 				'id'          => 'egns_gallery_images',
 				'type'        => 'gallery',
-				'title'       => esc_html__( 'Add Gallery Images', 'corelaw' ),
-				'desc'        => esc_html__( 'Please Upload Or Select Images From Media Library.', 'corelaw' ),
-				'add_title'   => esc_html__( 'Add Images', 'corelaw' ),
-				'edit_title'  => esc_html__( 'Edit Gallery', 'corelaw' ),
-				'clear_title' => esc_html__( 'Remove Images', 'corelaw' ),
+				'title'       => esc_html__( 'Add Gallery Images', 'xoon' ),
+				'desc'        => esc_html__( 'Please Upload Or Select Images From Media Library.', 'xoon' ),
+				'add_title'   => esc_html__( 'Add Images', 'xoon' ),
+				'edit_title'  => esc_html__( 'Edit Gallery', 'xoon' ),
+				'clear_title' => esc_html__( 'Remove Images', 'xoon' ),
 			),
 		)
 	)

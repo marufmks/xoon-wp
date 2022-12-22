@@ -4,7 +4,7 @@
  * Theme Helpers Class.
  *
  * @author  Egens Lab
- * @package Corelaw
+ * @package xoon
  * @since   1.0.0
  */
 
@@ -22,7 +22,7 @@ if (!class_exists('Egns_Helpers')) {
 	 * Egns Helpers Functions.
 	 *
 	 * @author   EgensLab
-	 * @package  Corelaw
+	 * @package  xoon
 	 * @since    1.0.0
 	 */
 	class Egns_Helpers
@@ -173,7 +173,7 @@ if (!class_exists('Egns_Helpers')) {
 
 							if ($page_option == 1) {
 								return true;
-							} elseif (is_singular('corelaw-project') || is_singular('post') || self::egns_is_blog_pages() || is_404()) {
+							} elseif (is_singular('xoon-project') || is_singular('post') || self::egns_is_blog_pages() || is_404()) {
 								return true;
 							} elseif ($theme_option == 1 && empty($page_option) && $page_option != 0) {
 								return true;
@@ -218,13 +218,19 @@ if (!class_exists('Egns_Helpers')) {
 				{
 					$egns_enable_preloader = self::egns_get_theme_option('preloader_enable');
 					$egns_scroll_top = self::egns_get_theme_option('scroll_top_enable');
+					$egns_theme_switcher = self::egns_get_theme_option('theme_switcher');
 
 
-					// if ( 1 == $egns_scroll_top ) {
-					// 	get_template_part('template-parts/common/scroll-top'); // Scroll Top
-					// }
 
-					if ( 1 == $egns_enable_preloader ) {
+					// get_template_part('template-parts/common/theme-switcher');
+					if (1 == $egns_theme_switcher) {
+						get_template_part('template-parts/common/theme-switcher'); // Theme Switcher
+					}
+					if (1 == $egns_scroll_top) {
+						get_template_part('template-parts/common/scroll-top'); // Scroll-top
+					}
+
+					if (1 == $egns_enable_preloader) {
 						get_template_part('template-parts/common/preloader'); // Preloader
 					}
 
@@ -283,15 +289,6 @@ if (!class_exists('Egns_Helpers')) {
 				 * @param string $default Optional. Default value.
 				 * @since   1.0.0
 				 */
-				// public static function egns_get_theme_option($key, $default = '')
-				// {
-				// 	$egns_theme_options = get_option('egns_theme_options');
-				// 	return isset($egns_theme_options[$key]) ? $egns_theme_options[$key] : $default;
-				// }
-
-
-
-
 
 				public static function egns_get_theme_option($key, $key2 = '', $default = '')
 				{
@@ -372,7 +369,7 @@ if (!class_exists('Egns_Helpers')) {
 
 				public static function egns_translate($value)
 				{
-					echo sprintf(__('%s', 'corelaw'), $value);
+					echo sprintf(__('%s', 'xoon'), $value);
 				}
 				/**
 				 * Escape any String with Translation
@@ -383,7 +380,7 @@ if (!class_exists('Egns_Helpers')) {
 				public static function egns_translate_with_escape_($value)
 				{
 					$value = esc_html($value);
-					echo sprintf(__('%s', 'corelaw'), $value);
+					echo sprintf(__('%s', 'xoon'), $value);
 				}
 
 				/**
@@ -577,7 +574,7 @@ if (!class_exists('Egns_Helpers')) {
 				{
 					$text =  get_post_meta(get_the_ID(), 'egns_quote_text', 1);
 					if (!empty($text)) {
-						return sprintf(esc_attr__("%s", 'corelaw'), $text);
+						return sprintf(esc_attr__("%s", 'xoon'), $text);
 					}
 				}
 
@@ -721,7 +718,7 @@ if (!class_exists('Egns_Helpers')) {
 					<div class="set-menu">
 						<h4>
 							<a href="<?php echo admin_url(); ?>nav-menus.php">
-								<?php echo esc_html('Set Menu Here...', 'corelaw'); ?>
+								<?php echo esc_html('Set Menu Here...', 'xoon'); ?>
 							</a>
 						</h4>
 					</div>
@@ -768,7 +765,7 @@ if (!class_exists('Egns_Helpers')) {
 				{
 					wp_link_pages(
 						array(
-							'before'           => '<ul class="pagination d-flex justify-content-center align-items-center"><span class="page-title">' . esc_html__('Pages: ', 'corelaw') . '</span><li>',
+							'before'           => '<ul class="pagination d-flex justify-content-center align-items-center"><span class="page-title">' . esc_html__('Pages: ', 'xoon') . '</span><li>',
 							'after'            => '</li></ul>',
 							'link_before'      => '',
 							'link_after'       => '',

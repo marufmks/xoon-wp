@@ -1,5 +1,4 @@
 
-
 <div class="preloader">
     <div class="counter">0</div>
 </div>

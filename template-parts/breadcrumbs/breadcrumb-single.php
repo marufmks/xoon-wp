@@ -5,40 +5,31 @@ $breadcrumb_enable_by_page = Egns_Helpers::egns_page_option_value('enable_breadc
 if (Egns_Helpers::is_enabled($enable_breadcrumb_by_theme, $breadcrumb_enable_by_page)) { ?>
     
 
-
-    <div class="bread-crumb-section" style="background-image:url(<?php echo !empty(Egns_Helpers::egns_get_theme_option('breadcrumb_bg','url')) ? Egns_Helpers::egns_get_theme_option('breadcrumb_bg','url') : '' ?>);">
-        <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-10 d-flex justify-content-center flex-column align-items-center">
-                    <div class="circle-text-common circel-tex-area3">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/icons/inner-star.svg" alt="image">
-                        <p id="CircleTypeText1" class="circle-text">
-                            <?php echo esc_html__('SCROLL * DOWN NOW&nbsp;', 'xoon') ?>
-                        </p>
-                    </div>
-                    <div class="banner-content d-flex justify-content-center flex-column align-items-center">
-                        <h2 class="bread-crumb-title">
-                            <?php
+<div style="background-image:url(<?php echo !empty(Egns_Helpers::egns_get_theme_option('breadcrumb_bg','url')) ? Egns_Helpers::egns_get_theme_option('breadcrumb_bg','url') : '' ?>);" class="inner-page-banner">
+    <div class="container">
+        <div class="row justify-content-center align-items-center text-center">
+            <div class="col-md-10">
+                <div class="banner-content">
+                    <h1>
+                        <?php
                             the_title();
-                            ?>
-                        </h2>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb gap-3">
-                                <li class="breadcrumb-item"><a href="<?php echo get_site_url(); ?>"><?php echo esc_html__('Home', 'xoon') ?></a></li>
-                                <li class="breadcrumb-item active" aria-current="page">
-                                    <?php
-                                    the_title();
-                                    ?>
-                                </li>
-                            </ol>
-                        </nav>
-                    </div>
+                        ?>
+                    </h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb gap-3">
+                            <li class="breadcrumb-item"><a href="<?php echo  home_url(); ?>"><?php echo esc_html__('Home', 'xoon') ?></a></li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <?php
+                                the_title();
+                                ?>
+                            </li>
+                        </ol>
+                    </nav>
                 </div>
             </div>
         </div>
     </div>
-
-
-    
+</div>
+   
 <?php
 };

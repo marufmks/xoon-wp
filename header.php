@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package astrip
+ * @package xoon
  */
 ?>
 <!doctype html>
@@ -19,7 +19,7 @@
 	wp_head();
 ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class('tt-magic-cursor'); ?>>
 <?php wp_body_open(); ?>
 
 <?php

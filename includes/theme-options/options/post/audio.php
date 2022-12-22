@@ -10,7 +10,7 @@ $audio_prefix   = 'egns_audio';
 ------------------------------------*/
 CSF::createMetabox( $audio_prefix,
 	array(
-		'title'           => esc_html__( 'Post Settings', 'corelaw' ),
+		'title'           => esc_html__( 'Post Settings', 'xoon' ),
 		'post_type'       => 'post',
 		'data_type'       => 'unserialize',
 		'context'         => 'normal',
@@ -27,13 +27,13 @@ CSF::createMetabox( $audio_prefix,
 ------------------------------------*/
 CSF::createSection( $audio_prefix,
 	array(
-		'title'  => esc_html__( 'Audio Post Setting', 'corelaw' ),
+		'title'  => esc_html__( 'Audio Post Setting', 'xoon' ),
 		'fields' => array(
 		    array(
 				'id'          => 'egns_audio_url',
 				'type'        => 'text',
-				'title'       => esc_html__( 'Audio Url', 'corelaw' ),
-				'subtitle'    => esc_html__( 'Paste here a valid audio url which is support auto embed with WordPress for post audio player preview.', 'corelaw' ),
+				'title'       => esc_html__( 'Audio Url', 'xoon' ),
+				'subtitle'    => esc_html__( 'Paste here a valid audio url which is support auto embed with WordPress for post audio player preview.', 'xoon' ),
 				'placeholder' => 'https://soundcloud.com/rodwave/by-your-side',
 				'default'     => 'https://soundcloud.com/rodwave/by-your-side',
 				'validate'    => 'csf_validate_url',
